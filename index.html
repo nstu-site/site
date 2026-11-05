@@ -75,10 +75,29 @@
                 radial-gradient(circle at 75% 75%, rgba(255,255,255,0.08) 0%, transparent 50%);
         }
         .hero-title {
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.35), 0 2px 4px rgba(0, 0, 0, 0.25);
         }
         .hero-subtitle {
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+        }
+        .stat-label {
+            color: #ffffff;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            letter-spacing: 0.02em;
+        }
+        .stat-number {
+            color: #ffffff;
+            text-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .status-badge {
+            background: rgba(255, 255, 255, 0.95);
+            color: #1e3a5f;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.2);
+        }
+        .status-badge .status-dot {
+            background: #10b981;
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
         }
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #e2e8f0; }
@@ -128,8 +147,8 @@
             animation: pulse 2s infinite;
         }
         @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.2); }
         }
         .floating-shape {
             position: absolute;
@@ -189,9 +208,9 @@
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center mb-12">
-                <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-1.5 mb-6 border border-white/20">
-                    <span class="w-2 h-2 rounded-full bg-emerald-400 pulse-dot"></span>
-                    <span class="text-sm font-medium">Работаем для вас 24/7</span>
+                <div class="inline-flex items-center gap-2.5 status-badge rounded-full px-5 py-2 mb-6">
+                    <span class="w-2.5 h-2.5 rounded-full status-dot pulse-dot"></span>
+                    <span class="text-sm font-bold tracking-wide">Работаем для вас 24/7</span>
                 </div>
                 
                 <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 hero-title tracking-tight">
@@ -222,18 +241,18 @@
             <!-- Stats -->
             <div class="flex justify-center gap-8 mt-12">
                 <div class="text-center">
-                    <div class="text-4xl font-bold hero-title" id="totalFound">0</div>
-                    <div class="text-blue-100 text-sm font-medium mt-1">Находок</div>
+                    <div class="text-4xl sm:text-5xl font-extrabold stat-number" id="totalFound">0</div>
+                    <div class="stat-label text-sm font-semibold mt-1">Находок</div>
                 </div>
-                <div class="w-px bg-white/20"></div>
+                <div class="w-px bg-white/30"></div>
                 <div class="text-center">
-                    <div class="text-4xl font-bold hero-title" id="totalReturned">0</div>
-                    <div class="text-blue-100 text-sm font-medium mt-1">Возвращено</div>
+                    <div class="text-4xl sm:text-5xl font-extrabold stat-number" id="totalReturned">0</div>
+                    <div class="stat-label text-sm font-semibold mt-1">Возвращено</div>
                 </div>
-                <div class="w-px bg-white/20"></div>
+                <div class="w-px bg-white/30"></div>
                 <div class="text-center">
-                    <div class="text-4xl font-bold hero-title" id="totalLocations">0</div>
-                    <div class="text-blue-100 text-sm font-medium mt-1">Локаций</div>
+                    <div class="text-4xl sm:text-5xl font-extrabold stat-number" id="totalLocations">0</div>
+                    <div class="stat-label text-sm font-semibold mt-1">Локаций</div>
                 </div>
             </div>
         </div>
